@@ -15,6 +15,7 @@ python3 main.py
 git clone 
 python3 main.py
 cd app 
+python3 -m venv env-app
 source env-app/bin/activate
 pip3 install -r requierments.txt
 python3 main.py
