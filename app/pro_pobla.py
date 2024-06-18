@@ -6,14 +6,16 @@ def conversion(path):
   diccionario = {}
   lista = []
   with open(path, "r") as files:
-    clave = files.readline().strip()
-    clave_f = clave.split(",")
-    
-    for file in files: 
-      valores = file.strip().split(",")
-      diccionario = dict(zip(clave_f, valores))
-      lista.append(diccionario)
-    return lista 
+    clave = files.readline().strip() #files.readline() = Lee Linea por linea. strip() = Elimina espacios en blanco. 
+    clave_f = clave.split(",")#Divide la cadena en valores de una lista, tomando como separación las comas del archivo. 
+    # Esto lo hace con la primera linea que son los indices o claves para el diccionario. 
+
+    for file in files: # Para cada linea del archivo..
+      valores = file.strip().split(",") #Elimina los espacios y divide cada valor cuando hay una coma y guarda esta linea en valores. 
+      diccionario = dict(zip(clave_f, valores)) # Con la función zip una los clave : valor de clave_F(indicies) y cada linea valores. 
+      lista.append(diccionario) #Agrega cada diccionario a la lista. 
+    return lista #Regresa la lista
+    #Se reinicia el ciclo hazta terminar. 
 
 lista_g = conversion("data.csv")
 
