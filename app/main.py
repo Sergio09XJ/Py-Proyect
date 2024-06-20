@@ -1,4 +1,4 @@
-import charts 
+"""import charts 
 import read
 import pandas as pd
 
@@ -30,13 +30,38 @@ def filtro_pandas(): # ------------- Filtramos todos los países de data.csv a l
 labels, values = filtro_pandas() #Guardamos las listas en cada variable. 
 
 charts.generate_pie_chart(labels, values) #Usando el modulo charts creamos una grafica de pastel con los paises de asia y su area total. 
+"""
 
 
-
-
-
+def count_words_by_length(words):
+ dictionary = {word:len(word) for word in words}
+ 
+ anterior = "none"
+ list = []
+ count = 0 #6
+ for word in words: 
+    if anterior == "none": 
+      list.append(1)  
+    elif len(word) == len(anterior):  
+        list[count-1] += 1
+        count +=1 
+    else:
+      list.append(1)   
+      count +=1   
    
-   
+    anterior = word  
+        
 
-   
+ #dictionary_F = {long:  for fruit,long in dictionary if long ==  }
+ return list 
+
+
+print(count_words_by_length([
+  "apple",
+  "banana",
+  "orange",
+  "grapefruit",
+  "pear",
+  "kiwi"
+])  )
    
