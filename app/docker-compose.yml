@@ -1,0 +1,9 @@
+#Este arhivo declara como se inicia y desde donde se inicia el contenedor. 
+
+services: 
+ app-csv: #Nombre del servicio o del docker a utliziar. 
+  build: #instrucción build
+    context: . # El contexto que va a usar build, la carpeta a utlizar que en este caso estamos ubicados en ella
+    dockerfile: Dockerfile #El archivo de la carpera que va a utlizar que en este caso es  Dockerfile, para construir el contenedor.  
+  volumes: # Este etiqueta nos permite actualizar los datos de los directorios y carpetas de manera automatica. 
+   - .:/app-dock #Indicamos el Directorio a automatizar los cambios
